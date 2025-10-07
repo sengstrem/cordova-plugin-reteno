@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.reteno.plugin">
+
+    <application>
+        <receiver
+            android:name="com.reteno.plugin.RetenoPushReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.reteno.custom-push" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.reteno.plugin.RetenoCustomNotificationReceiverClicked"
+            android:enabled="true"
+            android:exported="true"/>
+        <meta-data
+            android:name="com.reteno.Receiver.NotificationClicked"
+            android:value="com.reteno.plugin.RetenoCustomNotificationReceiverClicked" />
+
+        <meta-data
+            android:name="com.reteno.Receiver.PushReceived"
+            android:value="com.reteno.plugin.RetenoPushReceiver" />
+    </application>
+
+</manifest>
