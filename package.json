@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-reteno",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "The Reteno Cordova Plugin for Mobile Customer Engagement and Analytics solutions",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,7 +30,9 @@
     "test:ios": "bash ./test/test-default.sh 9.0.0 ios 5.0.1",
     "test:android": "bash ./test/test-default.sh 9.0.0 android 8.1.0 && bash ./test/test-with-3-plugins.sh 9.0.0 android 8.1.0 cordova-plugin-request-location-accuracy cordova-android-play-services-gradle-release cordova-android-reteno-gradle-release",
     "release": "release-it",
-    "release:minor": "release-it minor"
+    "release:minor": "release-it minor",
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
