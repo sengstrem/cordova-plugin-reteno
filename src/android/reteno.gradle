@@ -10,7 +10,7 @@ allprojects {
 
 dependencies {
 
-    implementation 'com.reteno:fcm:2.8.4'
+    implementation 'com.reteno:fcm:2.8.6'
     implementation "com.google.firebase:firebase-messaging:23.1.0"
     implementation "com.google.firebase:firebase-messaging-ktx:23.1.0"
 
