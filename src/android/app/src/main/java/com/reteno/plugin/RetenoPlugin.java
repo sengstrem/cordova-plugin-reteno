@@ -182,21 +182,29 @@ public class RetenoPlugin extends CordovaPlugin {
 
             if(apiKey != null) {
 
-                Reteno.initWithConfig(
-                    new RetenoConfig.Builder()
-                        .accessKey(apiKey)
-                        .setDebug(isDebugMode)
-                        .build()
-                );
+                cordova.getActivity().runOnUiThread(() -> {
 
-                cordova.getThreadPool().execute(new Runnable() {
-                    @Override
-                    public void run() {
+                    Reteno.initWithConfig(
+                        new RetenoConfig.Builder()
+                            .accessKey(apiKey)
+                            .setDebug(isDebugMode)
+                            .build()
+                    );
 
-                        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+                    cordova.getThreadPool().execute(new Runnable() {
+                        @Override
+                        public void run() {
 
-                    }
+                            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+
+                        }
+                    });
+
                 });
+
+
+
+
 
             }else{
 
