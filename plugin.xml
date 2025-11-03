@@ -79,7 +79,7 @@
 				<source url="https://cdn.cocoapods.org/"/>
 			</config>
 			<pods use-frameworks="true">
-				<pod name="Reteno" spec="2.5.8"/>
+				<pod name="Reteno" spec="2.5.13"/>
 			</pods>
 		</podspec>
 	</platform>
