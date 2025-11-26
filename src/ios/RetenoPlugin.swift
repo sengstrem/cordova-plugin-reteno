@@ -369,6 +369,7 @@ import UserNotifications
 
                 if let userInfo = notification.request.content.userInfo as? [String: Any] {
                     payload["userInfo"] = userInfo
+                    payload["additionalData"] = userInfo
                 }
 
                 let pluginResult = CDVPluginResult(
