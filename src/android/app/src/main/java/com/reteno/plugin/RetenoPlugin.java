@@ -438,11 +438,15 @@ public class RetenoPlugin extends CordovaPlugin {
             putString(p, "launchImageName", firstNonEmpty(i,
                 "launchImageName", "es_notification_image", "image", "gcm.notification.image", "picture", "large_icon"));
 
+            putString(p, "bigPicture", firstNonEmpty(i,
+                                        "launchImageName", "es_notification_image", "image", "gcm.notification.image", "picture", "large_icon"));
+
             putString(p,"actionId", firstNonEmpty(i, "es_btn_action_id"));
 
             // необязательно, но полезно:
             putString(p, "action", i.getAction());
             p.put("extras", bundleToJson(i.getExtras())); // все оригинальные extras
+            p.put("additionalData", bundleToJson(i.getExtras()));
         } catch (org.json.JSONException ignore) { }
         return p;
     }
